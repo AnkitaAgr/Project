@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="employeeApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
+        	.jumbotron {
+        		background-color: purple;
+        		color: white;
+        	}
+        </style>
+		<title></title>
+	</head>
+	<body class= "container">
+		<div class="jumbotron">
+			<h1 align="center"> Employees' Details</h1>
+		</div>
+	 	<!-- Employees Details view -->
+		<div ng-controller='employeesController'>
+
+			<form ng-submit="createEmployee()">
+				<div class="row">
+  					<div class="col-lg-6">
+    					<div class="input-group">
+      						<input type="text" class="form-control" placeholder="Employee's Name" ng-model="employeeName">
+      						<span class="input-group-btn">
+        					<button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+        					</span>
+   						</div><!-- /input-group -->
+  					</div><!-- /.col-lg-6 -->
+				</div><!-- /.row -->
+			</form>
+			
+			<h3>There are {{employees.length}} Employees</h3>
+			<ul type="square">
+				<li ng-repeat="employee in employees"> 
+					<i>{{employee.name}}</i>
+				</li>
+			</ul>
+
+		</div>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+
+		<script type="text/javascript" src="/js/controllers/employees-controller.js"></script>
+		
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+	
+	</body>
+</html>
